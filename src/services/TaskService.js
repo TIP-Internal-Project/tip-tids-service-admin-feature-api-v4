@@ -41,10 +41,8 @@ class TaskService {
   }
 
   async deleteTask(id, taskBody) {
-    const task = await Task.findOneAndUpdate({ id }, taskBody, {
-      new: true,
-      useFindAndModify: false,
-    });
+    console.log("ID : ", id );
+    const task = await Task.findOneAndDelete({ id : id });
     return task;
   }
 }
